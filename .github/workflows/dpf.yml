@@ -12,7 +12,8 @@ jobs:
   linux:
     strategy:
       matrix:
-        target: [linux-arm64, linux-armhf, linux-i686, linux-riscv64, linux-x86_64]
+        target: [linux-arm64, linux-armhf, linux-i686, linux-x86_64]
+        # FIXME linux-riscv64 needs -latomic
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
