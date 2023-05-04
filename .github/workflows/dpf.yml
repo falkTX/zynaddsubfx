@@ -22,6 +22,7 @@ jobs:
       - uses: distrho/dpf-cmake-action@v1
         with:
           target: ${{ matrix.target }}
+          dpf_path: 'DPF'
           pawpaw: true
 
   macos:
@@ -36,6 +37,7 @@ jobs:
       - uses: distrho/dpf-cmake-action@v1
         with:
           target: ${{ matrix.target }}
+          dpf_path: 'DPF'
           pawpaw: true
 
   windows:
@@ -50,15 +52,18 @@ jobs:
       - uses: distrho/dpf-cmake-action@v1
         with:
           target: ${{ matrix.target }}
+          dpf_path: 'DPF'
           pawpaw: true
 
-  pluginval:
-    runs-on: ubuntu-20.04
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          submodules: recursive
-      - uses: distrho/dpf-cmake-action@v1
-        with:
-          target: pluginval
-          pawpaw: true
+  # FIXME need to be able to specify custom output bin dir
+  #pluginval:
+    #runs-on: ubuntu-20.04
+    #steps:
+      #- uses: actions/checkout@v3
+        #with:
+          #submodules: recursive
+      #- uses: distrho/dpf-cmake-action@v1
+        #with:
+          #target: pluginval
+          #dpf_path: 'DPF'
+          #pawpaw: true
